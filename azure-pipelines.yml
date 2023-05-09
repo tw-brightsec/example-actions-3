@@ -1,4 +1,13 @@
 # Starter pipeline
+- task: NexPloitScan@3
+  inputs:
+    apiToken: 'zpxs5zw.nexa.n2mmeda30kdrg0dvkxmggxwxmhru96pk'
+    hostname: 'nexploit.app'
+    module: 'dast'
+    discoveryTypes: 'crawler'
+    crawlerUrls: 'https://brokencrystals.com'
+    scanTests: 'angular_csti, file_upload, csrf, unvalidated_redirect, rfi, lfi, sqli, date_manipulation, osi, retire_js, ssti, full_path_disclosure, ldapi, cookie_security, directory_listing, header_security, http_method_fuzzing, version_control_systems, backup_locations, jwt, default_login_location, dom_xss, xss, xxe, ssrf, wordpress, common_files, brute_force_login, secret_tokens, hrs, html_injection, open_database, open_buckets'
+    attackParamLocations: 'path, query, fragment, body'
 # Start with a minimal pipeline that you can customize to build and deploy your code.
 # Add steps that build, run tests, deploy, and more:
 # https://aka.ms/yaml
@@ -8,12 +17,3 @@ trigger:
 
 pool:
   vmImage: ubuntu-latest
-
-steps:
-- script: echo Hello, world!
-  displayName: 'Run a one-line script'
-
-- script: |
-    echo Add other tasks to build, test, and deploy your project.
-    echo See https://aka.ms/yaml
-  displayName: 'Run a multi-line script'
