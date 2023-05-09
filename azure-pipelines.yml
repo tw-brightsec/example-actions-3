@@ -1,19 +1,9 @@
 # Starter pipeline
-# Start with a minimal pipeline that you can customize to build and deploy your code.
-# Add steps that build, run tests, deploy, and more:
-# https://aka.ms/yaml
-
-trigger:
-- brokencrystals
-
-pool:
-  vmImage: ubuntu-latest
-
-steps:
-- script: echo Hello, world!
-  displayName: 'Run a one-line script'
-
-- script: |
-    echo Add other tasks to build, test, and deploy your project.
-    echo See https://aka.ms/yaml
-  displayName: 'Run a multi-line script'
+- task: NexPloitScan@3
+  inputs:
+    apiToken: 'zpxs5zw.nexa.n2mmeda30kdrg0dvkxmggxwxmhru96pk'
+    hostname: 'nexploit.app'
+    module: 'dast'
+    discoveryTypes: 'crawler'
+    crawlerUrls: 'https://brokencrystals.com'
+    scanTests: 'angular_csti,jwt,date_manipulation,cookie_security,csrf,directory_listing,dom_xss,file_upload,full_path_disclosure,header_security,http_method_fuzzing,secret_tokens,version_control_systems,wordpress'
