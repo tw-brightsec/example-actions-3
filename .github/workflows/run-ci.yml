@@ -36,7 +36,7 @@ jobs:
           api_token:  ${{ secrets.BRIGHT_TOKEN }}
           hostname: hotel.playground.brightsec.com
           scan: ${{ steps.start.outputs.id }}
-          wait_for: low
+          wait_for: low, medium, high
           code_scanning_alerts: true
           github_token: ${{ secrets.KEY_GITHUB }}
           timeout: 800
